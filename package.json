@@ -1,0 +1,22 @@
+{
+  "name": "rtpa",
+  "version": "1.0.0",
+  "main": "cli.js",
+  "bin": {
+    "rtpa": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tailwind",
+    "cli",
+    "automation"
+  ],
+  "author": "likeur",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "@inquirer/prompts": "^7.8.2"
+  }
+}
