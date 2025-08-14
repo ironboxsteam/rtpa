@@ -33,7 +33,7 @@ async function main() {
 
     console.log(`\nCréation du projet '${projectName}'...`);
 
-    // 1. Création du dossier du projet
+    // Création du dossier du projet
     const projectPath = path.join(process.cwd(), projectName);
     if (fs.existsSync(projectPath)) {
       console.error(`❌ Erreur : Le dossier '${projectName}' existe déjà.`);
@@ -42,16 +42,16 @@ async function main() {
     fs.mkdirSync(projectPath);
     process.chdir(projectPath);
 
-    // 2. Initialisation de npm
+    // Initialisation de npm
     console.log("📦 Initialisation de npm...");
     execSync("npm init -y");
 
-    // 3. Installation des dépendances
+    // Installation des dépendances
     let dependencies = ["tailwindcss @tailwindcss/cli"];
     console.log("🔧 Installation des dépendances de développement...");
     execSync(`npm install -D ${dependencies.join(" ")}`, { stdio: "inherit" });
 
-    // 6. Création de la structure de fichiers de base
+    // Création de la structure de fichiers de base
     fs.mkdirSync(path.join(projectPath, "css"));
     fs.mkdirSync(path.join(projectPath, "img"));
 
@@ -61,9 +61,8 @@ async function main() {
       `@import "tailwindcss"`
     );
 
-    // Nom du script à ajouter
+    // Ajout du script
     const scriptName = "start";
-    // Commande du script
     const scriptCommand =
       "npx @tailwindcss/cli -i ./css/input.css -o ./css/output.css --watch";
 
