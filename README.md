@@ -41,7 +41,7 @@ Si vous choisissez de vous connecter à GitHub, l'outil vous demandera votre tok
 
 ### Comment obtenir votre token d'accès personnel (PAT) :
 
-- Rendez-vous sur les (Paramètres des jetons d'accès personnels de GitHub)[https://github.com/settings/tokens].
+- Rendez-vous sur les [Paramètres des jetons d'accès personnels de GitHub](https://github.com/settings/tokens).
 
 - Cliquez sur "Generate new token" (Générer un nouveau jeton).
 
