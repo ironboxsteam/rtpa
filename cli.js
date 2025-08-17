@@ -174,25 +174,28 @@ async function main() {
     fs.writeFileSync(
       path.join(projectPath, "index.html"),
       `<!doctype html>
-    <html lang="fr">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="./dist/output.css" rel="stylesheet">
-      <title>${projectName}</title>
-      <link rel="stylesheet" href="css/output.css">
-    </head>
-    <body>
-      <h1 class="text-center text-3xl font-bold underline">
-        Hello world !
-        Happy coding to you mate.
-    
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>${projectName}</title>
+            <link rel="stylesheet" href="css/output.css">
+        </head>
+        <body class="p-4 h-screen flex items-center justify-center">
+    <main class="container mx-auto px-4 flex flex-col items-center gap-4">
+      <p class="text-center bg-blue-600/10 text-sm p-1 px-3 rounded-full text-blue-600">Template Rtpa simple html for ${projectName}</p>
+      <h1 class="text-center text-3xl lg:text-5xl font-bold lg:w-[60%]">
+         Focus on shipping what matter the most. Happy coding to you mate.
       </h1>
-      <p>
-        coded with love by <a href="https://github.com/Likeur" class="underline text-blue-500">likeur</a>
+      <p class="text-zinc-500">
+        coded with love by
+        <a href="https://github.com/Likeur" class="underline text-blue-500"
+          >Likeur</a
+        >
       </p>
-    </body>
-    </html>`
+    </main>
+        </body>
+        </html>`
     );
 
     // initializing an empty git local repo and creation of gitignore file

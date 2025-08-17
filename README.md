@@ -40,29 +40,27 @@ You can use RTPA in several ways:
 1. **interactive mode**
 Run the command without any arguments to choose the project type and name via interactive prompts:
 
+- for simple HTML/CSS project
 ```bash
 rtpa
 ```
 
+- for vite vanilla js project 
+```bash
+rtpavite
+```
+
 2. **Direct project creation**
-Use the `--vite` or `--simple` flags to directly specify the project type. You can also provide the project name immediately after the flag.
+Use the `--js` flags to directly specify the project type. You can also provide the project name immediately after the flag.
 
 - Create a vite project:
 
 ```bash
-rtpa --vite project-name
+rtpavite --js project-name
 ```
 
 if `project-name` is omitted, the tool will prompt you for it.
-Exemple `rtpa --vite my-vite-app`
-
-- Create a simple HTML/CSS project:
-
-```bash
-rtpa --simple project-name
-```
-if `project-name` is omitted, the tool will prompt you for it.
-Exemple `rtpa --simple my-static-site`
+Exemple `rtpavite --js my-vite-app`
 
 
 ## Github Configuration
@@ -104,7 +102,6 @@ Contributions are welcome! Feel free to open issues or submit pull requests.
 ## Note : 
 
 your token is not saved in the code or send somewhere, in order to keep your github account secure.
-
 
 
 coded with love by @likeur
