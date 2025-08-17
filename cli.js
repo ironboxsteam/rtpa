@@ -19,7 +19,7 @@ console.log(
         ***    ***         ***       ***          ***     *** (@by likeur)
     `
 );
-console.log("✨ Bienvenue dans l'outil de création de projet Tailwind CSS !");
+console.log("✨ Welcome to the Ready Tailwindcss Project Assistant Tool!");
 
 async function createAndPushToGitHub(
   projectName,
@@ -28,7 +28,7 @@ async function createAndPushToGitHub(
   isPrivate
 ) {
   try {
-    console.log("\n⏳ Création du dépôt sur GitHub...");
+    console.log("\n⏳ Creating repository on GitHub...");
 
     const response = await fetch("https://api.github.com/user/repos", {
       method: "POST",
@@ -46,7 +46,7 @@ async function createAndPushToGitHub(
     if (!response.ok) {
       const errorText = await response.text();
       throw new Error(
-        `Échec de la création du dépôt GitHub: ${response.status} - ${errorText}`
+        `Failed to create GitHub repository: ${response.status} - ${errorText}`
       );
     }
 
@@ -54,31 +54,31 @@ async function createAndPushToGitHub(
     const repoUrl = repoData.clone_url;
     const userName = repoData.owner.login;
 
-    console.log("✅ Dépôt GitHub créé avec succès !");
+    console.log("✅ GitHub repository created successfully!");
 
-    console.log("⏳ Préparation du premier commit...");
+    console.log("⏳ Preparing first commit...");
     execSync("git add .");
     execSync('git commit -m "feat: initial project setup"');
 
-    console.log("⏳ Push du projet sur GitHub...");
+    console.log("⏳ Pushing project to GitHub...");
     execSync(`git remote add origin ${repoUrl}`);
     execSync("git branch -M main");
     execSync("git push -u origin main");
 
-    console.log(`\n🎉 Projet poussé sur GitHub avec succès !`);
+    console.log(`\n🎉 Project pushed to GitHub successfully!`);
     console.log(
-      `🔗 Votre dépôt est disponible à l'adresse : ${repoUrl.replace(
+      `🔗 Your repository is available at: ${repoUrl.replace(
         ".git",
         ""
       )}`
     );
   } catch (error) {
     console.error(
-      "❌ Une erreur est survenue lors de la connexion à GitHub :",
+      "❌ An error occurred while connecting to GitHub:",
       error.message
     );
     console.log(
-      "\n❗ Le projet a été créé localement. Vous pouvez le pousser manuellement plus tard."
+      "\n❗ The project was created locally. You can push it manually later."
     );
   }
 }
@@ -86,45 +86,45 @@ async function createAndPushToGitHub(
 async function main() {
   try {
     const projectType = await select({
-      message: "Quel type de projet souhaitez-vous créer ?",
+      message: "which type of project do you want to create ?",
       choices: [
         {
-          name: "Projet HTML/CSS simple",
+          name: "simple HTML/CSS project",
           value: "simple",
-          description: "Crée un projet HTML/CSS statique avec Tailwind CSS.",
+          description: "a static website with html/css",
         },
       ],
     });
 
     const projectName = await input({
-      message: "Quel est le nom de votre projet ?",
-      default: "mon-projet-tailwind",
+      message: "What is the name of your project?",
+      default: "my-tailwind-project",
       validate: (value) => {
         if (/^([A-Za-z\-\_\d])+$/.test(value)) {
           return true;
         }
-        return "Le nom du projet ne doit contenir que des lettres, chiffres, tirets et underscores.";
+        return "Project name must contain only letters, numbers, hyphens, and underscores.";
       },
     });
 
-    console.log(`\nCréation du projet '${projectName}'...`);
+    console.log(`\n Creating '${projectName}' project...`);
 
     // create project folder
     const projectPath = path.join(process.cwd(), projectName);
     if (fs.existsSync(projectPath)) {
-      console.error(`❌ Erreur : Le dossier '${projectName}' existe déjà.`);
+      console.error(`❌ Erreur : The folder '${projectName}' already exists. Please choose another name or delete the existing folder.`);
       process.exit(1);
     }
     fs.mkdirSync(projectPath);
     process.chdir(projectPath);
 
     // npm init 
-    console.log("📦 Initialisation de npm...");
+    console.log("📦 Initializing npm...");
     execSync("npm init -y");
 
     // dependancy installation
     let dependencies = ["tailwindcss @tailwindcss/cli"];
-    console.log("🔧 Installation des dépendances de développement...");
+    console.log("🔧 dependency installation ...");
     execSync(`npm install -D ${dependencies.join(" ")}`, { stdio: "inherit" });
 
     // Creation of base file structure
@@ -161,11 +161,11 @@ async function main() {
       fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
 
       console.log(
-        `\n✅ Le script "${scriptName}" a été ajouté à votre package.json.`
+        `\n✅ The script "${scriptName}" has successfully been added to package.json.`
       );
     } catch (error) {
       console.error(
-        "❌ Erreur lors de la modification de package.json :",
+        "❌ Error when updating package.json :",
         error
       );
     }
@@ -199,7 +199,7 @@ async function main() {
     );
 
     // initializing an empty git local repo and creation of gitignore file
-    console.log("🌱 Initialisation du dépôt Git...");
+    console.log("🌱 Initializing Git repository...");
     execSync("git init");
 
     const gitignoreContent = `/node_modules\n`;
@@ -208,17 +208,17 @@ async function main() {
     //connexion to git
     const connectToGitHub = await confirm({
       message:
-        "Souhaitez-vous créer un dépôt GitHub pour ce projet et y pousser le code ?",
+        "Do you want to create a GitHub repository for this project and push the code?",
     });
 
     if (connectToGitHub) {
       const gitHubToken = await input({
         message:
-          'Veuillez entrer votre token d\'accès personnel (PAT) GitHub. (Nécessite la permission "repo")',
+          'Please enter your GitHub Personal Access Token (PAT). (Requires "repo" permission)',
       });
 
       const isPrivate = await confirm({
-        message: "Voulez-vous que le dépôt soit privé ?",
+        message: "Do you want the repository to be private?",
         default: true,
       });
 
@@ -229,18 +229,18 @@ async function main() {
         isPrivate
       );
     } else {
-      console.log("\n✅ Projet créé avec succès !");
-      console.log("🚀 Pour commencer, suivez ces étapes :");
-      console.log(`1. Accédez au dossier : \`cd ${projectName}\``);
-      console.log("2. Lancez le serveur de développement : `npm run start`");
+      console.log("\n✅ Project created successfully!!");
+      console.log("🚀 To get started, follow these steps:");
+      console.log(`1. Navigate to the folder : \`cd ${projectName}\``);
+      console.log("2. Start the development server : `npm run start`");
       console.log(
-        "3. Ouvrez votre `index.html` dans le navigateur et commencez à coder !"
+        "3. open your `index.html` in the browser !"
       );
     }
   } catch (error) {
     if (error.isTtyError) {
     } else {
-      console.error("❌ Une erreur est survenue :", error);
+      console.error("❌ error when creating the project :", error);
     }
   }
 }
