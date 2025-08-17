@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+//v@1.3.0
 const { select, input, confirm } = require("@inquirer/prompts");
 const { execSync } = require("child_process");
 const path = require("path");
