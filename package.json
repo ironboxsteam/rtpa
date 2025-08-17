@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "main": "cli.js",
   "bin": {
-    "rtpa": "rtpa.js"
+    "rtpa": "cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

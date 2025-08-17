@@ -359,8 +359,9 @@ async function main() {
 
     // Project creation logic based on type
     if (projectType === "simple") {
-      fs.mkdirSync(projectPath); // Create project folder for simple type
-      createSimpleHtmlCssProject(projectName, projectPath);
+      fs.mkdirSync(projectPath);
+            process.chdir(projectPath); // <--- IMPORTANT: Change directory for simple projects
+            createSimpleHtmlCssProject(projectName);
     } else if (projectType === "vite") {
       // Vite handles folder creation, so we don't call fs.mkdirSync here
       createViteTailwindProject(projectName, projectPath);
