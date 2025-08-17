@@ -1,38 +1,38 @@
-# RTPA : ready tailwindcss project assistant
+# RTPA - Ready Tailwind CSS Project Assistant Creation Tool
 
-Un outil en ligne de commande (CLI) simple pour automatiser la configuration d'un projet web de base avec **Tailwind CSS V4**. Il permet de démarrer rapidement un projet sans avoir à configurer manuellement toutes les dépendances et les fichiers de configuration et permet l'installation automatique des dépendances npm, tout en offrant la possibilité d'automatiser également les étapes de publication de votre code sur un dépot github.
+RTPA (Rapid Tailwind Project Assistant) is a command-line tool designed to simplify the creation of new web projects with **Tailwind CSS**. It supports setting up both simple HTML/CSS projects and modern **Vite.js** based projects, with automatic Tailwind CSS integration.
 
----
+## Features
 
-## Fonctionnalités
+* **Fast Project Creation:** Launch a new static HTML/CSS project or a Vite.js project in seconds.
 
--   **Installation rapide** des dépendances (`tailwindcss @tailwindcss/cli`).
--   **Création de la structure de fichiers** de base (`css/input.css`, `index.html`, `.gitignore`).
--   **Configuration automatique** des fichiers `package.json` et `.gitignore`.
--   **Initialisation d'un dépôt Git** et création d'un fichier `.gitignore`.
--   **Ajout d'un script de démarrage** (`npm run start`) dans `package.json` pour compiler Tailwind en mode *watch*.
--   **Connectivité GitHub** : Crée un dépôt sur votre compte GitHub (public ou privé) et y pousse votre projet initial.
+* **Tailwind CSS Integration:** Automatically configures Tailwind CSS for your project.
 
----
+* **Vite.js Option:** Sets up Vite.js with the Tailwind CSS plugin for a modern development experience.
+
+* **Command Line Arguments:** Specify project type and name directly from the command line.
+
+* **Git Initialization:** Automatically initializes a local Git repository.
+
+* **GitHub Integration (Optional):** Initializes a GitHub repository and pushes your code (requires a GitHub PAT).
 
 ## Installation
 
-Pour utiliser l'outil, vous devez l'installer globalement via npm. Assurez-vous d'avoir Node.js et git d'installé sur votre machine.
+To use RTPA, you need Node.js and npm (or Yarn/pnpm) installed on your machine.
+
+### Global Installation (Recommended)
+
+Using npm : you can install it globally:
 
 ```bash
 npm install -g rtpa
 ```
-
-## Utilisation
-
-Pour créer un nouveau projet Tailwind CSS, exécutez la commande suivante dans le terminal :
-
 ```bash
-rtpa 
+yarn global add rtpa
 ```
-
-Un shell interactif vous guidera pour choisir le type de projet, lui donner un nom, et vous proposera de vous connecter à GitHub.
-
+```bash
+pnpm install -g rtpa
+```
 ## Connexion à GitHub
 
 L'outil vous propose de vous connecter à votre compte GitHub pour créer un dépôt et y pousser le projet automatiquement. Vous pouvez choisir de vous connecter ou de continuer sans créer de repo.
