@@ -33,29 +33,77 @@ yarn global add rtpa
 ```bash
 pnpm install -g rtpa
 ```
-## Connexion à GitHub
 
-L'outil vous propose de vous connecter à votre compte GitHub pour créer un dépôt et y pousser le projet automatiquement. Vous pouvez choisir de vous connecter ou de continuer sans créer de repo.
+## Usage
+You can use RTPA in several ways:
 
-Si vous choisissez de vous connecter à GitHub, l'outil vous demandera votre token d'accès personnel (PAT). Ce token est nécessaire pour que le script puisse créer et pousser le dépôt en votre nom.
+1. **interactive mode**
+Run the command without any arguments to choose the project type and name via interactive prompts:
 
-### Comment obtenir votre token d'accès personnel (PAT) :
+```bash
+rtpa
+```
 
-- Rendez-vous sur les [Paramètres des jetons d'accès personnels de GitHub](https://github.com/settings/tokens).
+2. **Direct project creation**
+Use the `--vite` or `--simple` flags to directly specify the project type. You can also provide the project name immediately after the flag.
 
-- Cliquez sur "Generate new token" (Générer un nouveau jeton).
+- Create a vite project:
 
-- Choisissez le token classic
+```bash
+rtpa --vite project-name
+```
 
-- Donnez un nom explicite à votre token (`ex: cli-tailwind-tool`).
+if `project-name` is omitted, the tool will prompt you for it.
+Exemple `rtpa --vite my-vite-app`
 
-- Cochez la case pour la permission `repo` (pour créer un dépôt).
+- Create a simple HTML/CSS project:
 
-- Cliquez sur "Generate token" et copiez le token affiché. Gardez-le en lieu sûr, il ne sera plus affiché après !
+```bash
+rtpa --simple project-name
+```
+if `project-name` is omitted, the tool will prompt you for it.
+Exemple `rtpa --simple my-static-site`
+
+
+## Github Configuration
+
+When prompted by the tool, you can choose to link your project to a new GitHub repository. You will need to provide a GitHub Personal Access Token (PAT) with repo permission for the tool to create and push the repository on your behalf.
+
+### How to get your personnal token (PAT) ? :
+
+- clic here [personal token settings](https://github.com/settings/tokens).
+
+- clic on "Generate new token".
+
+- Choose token(classic)
+
+- give an explicit name to the token (`ex: cli-tailwind-tool`).
+
+- give `repo` permission by checking the repo option.
+
+- Clic on "Generate token" and copy and paste your token somewhere accessible because you'll not see it again (save it wisely in a personal file).
+
+
+## Quick Start After Creation
+Once your project is created, follow the instructions displayed in your terminal.
+
+### For a Simple HTML/CSS Project:
+1. Navigate to your project folder: cd [project-name]
+2. Launch the Tailwind CSS compiler in watch mode: npm run start
+3. Open your index.html file in a web browser to see your live changes.
+
+### For a Vite.js Project:
+1. Navigate to your project folder: cd [project-name]
+2. Launch the Vite development server: npm run dev
+3. Open your browser to the local address indicated by Vite (usually http://localhost:5173/).
+
+## Contribution
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
 
 ## Note : 
 
-Votre token n'est stocké nulle part. Il est utilisé une seule fois lors de l'exécution du script pour authentifier votre requête à l'API de GitHub. ceci garanti la sécurité de votre compte github.
+your token is not saved in the code or send somewhere, in order to keep your github account secure.
 
 
 
